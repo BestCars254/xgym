@@ -81,32 +81,33 @@ const steps = [
 
 const personalPlans = [
   {
-    eyebrow: '月2回・隔週ペース',
-    name: 'ライト',
+    eyebrow: 'はじめて・維持向け',
+    name: '月2回プラン',
     price: '¥15,000',
-    freq: '月2回',
-    desc: 'フォーム確認や健康維持に。まずは習慣化したい方へ。',
+    desc: '隔週ペースで、正しいフォームと体の状態を確認。運動習慣の維持や、本格コース卒業後のメンテナンスに最適です。',
+    unlimited: '通い放題 +¥3,000/月',
+    unlimitedFree: false,
     recommended: false,
   },
   {
-    eyebrow: '月4回・週1ペース',
-    name: 'スタンダード',
+    eyebrow: 'いちばん選ばれています',
+    name: '月4回プラン',
     price: '¥28,000',
-    freq: '月4回',
-    desc: '本気で体を変えたい方の定番。いちばん選ばれているプランです。',
+    desc: '週1回の指導で、無理なく着実に体を変える定番プラン。仕事帰りでも続けやすいペースです。',
+    unlimited: '通い放題 +¥3,000/月',
+    unlimitedFree: false,
     recommended: true,
   },
   {
-    eyebrow: '月8回・週2ペース',
-    name: 'プレミアム',
+    eyebrow: '本気で変えたい方へ',
+    name: '月8回プラン',
     price: '¥52,000',
-    freq: '月8回',
-    desc: '短期間で結果を出したい方へ。集中的にサポートします。',
+    desc: '週2回でしっかり追い込み、最短で結果を出したい方へ。トレーナーが進捗を細かく管理します。',
+    unlimited: '通い放題が無料でついてきます',
+    unlimitedFree: true,
     recommended: false,
   },
 ];
-
-const personalIncludes = ['通常ジム利用（自主トレ）使い放題', '初回カウンセリング', '食事アドバイス'];
 
 const memberPlans = [
   { name: '通常会員', tag: '月ごと契約', price: '¥9,800', desc: '縛りなく自由に通えるスタンダード。' },
@@ -236,19 +237,19 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 md:px-10">
           <SectionHeader
             eyebrow="料金プラン"
-            title="マンツーマンで、最短で。自主トレ通い放題つき。"
-            subtitle="入会金・追加費用は別途ご確認ください。まずは無料体験からどうぞ。"
+            title="マンツーマンで、最短で。一人ひとりの体に。"
+            subtitle="当ジムの主役は、IFBB公認トレーナーによるマンツーマン指導です。まずは無料体験から、あなたの体に合うかを確かめてください。"
             align="center"
           />
 
           <Reveal>
             <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-brand-soft px-6 py-5 text-left">
               <p className="text-sm leading-relaxed text-neutral-700">
-                当ジムの主役は、<span className="font-semibold text-brand-ink">IFBB公認トレーナーによるマンツーマン指導</span>です。
-                すべてのパーソナル会員は、<span className="font-semibold text-brand-ink">通常のジム利用（自主トレ）も使い放題</span>。
-                指導のない日も、ご自身のペースで通えます。
+                パーソナルプランは、<span className="font-semibold text-brand-ink">トレーナーとのマンツーマン指導が中心</span>です。
+                指導のない日もご自身で通い放題にしたい方は、<span className="font-semibold text-brand-ink">通い放題オプション（月 +¥3,000）</span>を追加できます。
+                <span className="font-semibold text-brand-ink">週2回プラン（月8回）は、通い放題が無料</span>でついてきます。
                 <br className="hidden sm:block" />
-                自主トレだけご希望の方は、下部の<span className="font-semibold text-brand-ink">通常会員プラン</span>をご覧ください。
+                自主トレだけをご希望の方は、ページ下部の<span className="font-semibold text-brand-ink">通常会員プラン</span>をご覧ください。
               </p>
             </div>
           </Reveal>
@@ -274,13 +275,15 @@ export default function Home() {
                       p.recommended ? 'text-white/60' : 'text-neutral-500'
                     }`}
                   >
-                    パーソナル・{p.name}
-                  </span>
-                  <span
-                    className={`mt-1 text-sm ${p.recommended ? 'text-white/70' : 'text-neutral-500'}`}
-                  >
                     {p.eyebrow}
                   </span>
+                  <h3
+                    className={`mt-2 font-serif text-2xl font-bold ${
+                      p.recommended ? 'text-white' : 'text-brand-ink'
+                    }`}
+                  >
+                    {p.name}
+                  </h3>
                   <div className="mt-5 flex items-baseline gap-2">
                     <span
                       className={`font-display text-5xl ${p.recommended ? 'text-white' : 'text-brand-ink'}`}
@@ -288,41 +291,60 @@ export default function Home() {
                       {p.price}
                     </span>
                     <span className={`text-sm ${p.recommended ? 'text-white/70' : 'text-neutral-500'}`}>
-                      / 月（{p.freq}）
+                      / 月
                     </span>
                   </div>
                   <p
-                    className={`mt-4 text-sm leading-relaxed ${
+                    className={`mt-4 flex-1 text-sm leading-relaxed ${
                       p.recommended ? 'text-white/75' : 'text-neutral-600'
                     }`}
                   >
                     {p.desc}
                   </p>
-                  <ul
-                    className={`mt-5 space-y-2 border-t pt-5 ${
+                  <div
+                    className={`mt-5 border-t pt-4 ${
                       p.recommended ? 'border-white/15' : 'border-neutral-100'
                     }`}
                   >
-                    {personalIncludes.map((item) => (
-                      <li
-                        key={item}
-                        className={`flex items-start gap-2 text-sm ${
-                          p.recommended ? 'text-white/85' : 'text-neutral-700'
+                    {p.unlimitedFree ? (
+                      <p
+                        className={`flex items-start gap-2 text-sm font-semibold ${
+                          p.recommended ? 'text-white' : 'text-brand-red'
                         }`}
                       >
-                        <span className="mt-0.5 font-bold text-brand-red">✓</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                        <span className="mt-0.5">★</span>
+                        {p.unlimited}
+                      </p>
+                    ) : (
+                      <p
+                        className={`text-sm ${p.recommended ? 'text-white/70' : 'text-neutral-500'}`}
+                      >
+                        ＋オプション：
+                        <span className={p.recommended ? 'font-semibold text-white' : 'font-semibold text-brand-ink'}>
+                          {p.unlimited}
+                        </span>
+                      </p>
+                    )}
+                  </div>
                 </div>
               </Reveal>
             ))}
           </div>
 
           <Reveal delay={240}>
-            <p className="mt-6 text-center text-sm text-neutral-500">
-              すべてのパーソナルプランに「通常ジム利用 使い放題」「初回カウンセリング」「食事アドバイス」を含みます。
+            <div className="mx-auto mt-6 max-w-3xl rounded-2xl bg-brand-soft px-6 py-4 text-center">
+              <span className="text-xs font-bold uppercase tracking-widest text-brand-red">
+                全プラン共通で含むもの
+              </span>
+              <p className="mt-1.5 text-sm font-semibold text-brand-ink">
+                初回カウンセリング＋体組成測定　／　基本の食事アドバイス
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={280}>
+            <p className="mx-auto mt-4 max-w-3xl text-center text-xs leading-relaxed text-neutral-500">
+              表示は月額料金（税込）です。入会金 ¥22,000 が別途かかります（現在オープン記念につき無料）。
             </p>
           </Reveal>
 
