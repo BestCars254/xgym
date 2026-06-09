@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Nav } from './components/Nav';
 import { Footer } from './components/Footer';
 import { ScrollToTop } from './components/ScrollToTop';
+import { FloatingCTA } from './components/FloatingCTA';
 import Home from './pages/Home';
 import Personal from './pages/Personal';
 import Contact from './pages/Contact';
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
+      <FloatingCTA />
       <Footer />
     </div>
   );
