@@ -68,26 +68,58 @@ const steps = [
   { n: '04', title: 'ご入会・スタート', body: 'あなたに合ったプランで、今日から始めましょう。' },
 ];
 
-const testimonial = [
+const testimonials = [
   {
-    q: 'なぜ X FITNESS GYM を選びましたか？',
-    a: '設備が充実していることはもちろんですが、トレーナーの皆さんがとても親切でプロフェッショナルなところに惹かれました。自分の目標に合わせて、解剖学的な視点も含めて的確なアドバイスをくれるので、「ここなら信頼して体を任せられる！」と思い選びました。',
+    name: 'H.C 様',
+    quote: '一言で言うと「最高」です。毎回ジムに行くのが楽しみになります。',
+    qa: [
+      {
+        q: 'なぜ X FITNESS GYM を選びましたか？',
+        a: '設備が充実していることはもちろんですが、トレーナーの皆さんがとても親切でプロフェッショナルなところに惹かれました。自分の目標に合わせて、解剖学的な視点も含めて的確なアドバイスをくれるので、「ここなら信頼して体を任せられる！」と思い選びました。',
+      },
+      {
+        q: '入会前はどんな悩みがありましたか？',
+        a: '最初は「自分でも本当にやっていけるのかな…」という不安が一番大きかったです。また、日々の活動量に対する消費カロリーのバランスや、トレーニングの正しいフォームが分からず、自己流では限界を感じていました。体脂肪をコントロールしながら、しっかり筋肉をつけてメリハリのある体を作りたいけれど、1人で迷わずに続けていける自信がありませんでした。',
+      },
+      {
+        q: 'トレーニングを始めて、体や生活にどんな変化がありましたか？',
+        a: 'ベンチプレスやレッグカールなど、正しいフォームを教わったことで、狙った筋肉にしっかり効かせられるようになり、体の引き締まりを実感しています！また、日々の消費カロリーを意識するようになり、毎日の食事や休息のバランスなど、健康に対するライフスタイル全体の意識が大きく変わりました。',
+      },
+      {
+        q: 'トレーナーの指導はいかがでしたか？',
+        a: '一言で言うと「最高」です！ ただキツい運動をさせるのではなく、「なぜこのトレーニングが必要なのか」「どこの筋肉を動かしているのか」を論理的に、かつポジティブに教えてくれます。モチベーションの上げ方も上手なので、毎回ジムに行くのが楽しみになります。',
+      },
+      {
+        q: 'これから入会を検討している方へメッセージをお願いします！',
+        a: '「自分にできるかな…」と迷っているなら、絶対に一歩を踏み出してみることをおすすめします！ X FITNESS GYMのトレーナーは、一人ひとりの目標やライフスタイルに真剣に寄り添ってくれます。体が変わると、毎日の生活や自分への自信も驚くほど変わりますよ！',
+      },
+    ],
   },
   {
-    q: '入会前はどんな悩みがありましたか？',
-    a: '最初は「自分でも本当にやっていけるのかな…」という不安が一番大きかったです。また、日々の活動量に対する消費カロリーのバランスや、トレーニングの正しいフォームが分からず、自己流では限界を感じていました。体脂肪をコントロールしながら、しっかり筋肉をつけてメリハリのある体を作りたいけれど、1人で迷わずに続けていける自信がありませんでした。',
-  },
-  {
-    q: 'トレーニングを始めて、体や生活にどんな変化がありましたか？',
-    a: 'ベンチプレスやレッグカールなど、正しいフォームを教わったことで、狙った筋肉にしっかり効かせられるようになり、体の引き締まりを実感しています！また、日々の消費カロリーを意識するようになり、毎日の食事や休息のバランスなど、健康に対するライフスタイル全体の意識が大きく変わりました。',
-  },
-  {
-    q: 'トレーナーの指導はいかがでしたか？',
-    a: '一言で言うと「最高」です！ ただキツい運動をさせるのではなく、「なぜこのトレーニングが必要なのか」「どこの筋肉を動かしているのか」を論理的に、かつポジティブに教えてくれます。モチベーションの上げ方も上手なので、毎回ジムに行くのが楽しみになります。',
-  },
-  {
-    q: 'これから入会を検討している方へメッセージをお願いします！',
-    a: '「自分にできるかな…」と迷っているなら、絶対に一歩を踏み出してみることをおすすめします！ X FITNESS GYMのトレーナーは、一人ひとりの目標やライフスタイルに真剣に寄り添ってくれます。体が変わると、毎日の生活や自分への自信も驚くほど変わりますよ！',
+    name: 'J.T 様',
+    quote: '一人では出せない力を、引き出してもらえます。',
+    qa: [
+      {
+        q: 'なぜ X FITNESS GYM を選びましたか？',
+        a: '知り合いからの紹介で知りました。そして、パーソナルトレーナーのもとで、いろいろな生徒さんが成長している姿を見て、とてもリスペクトできる場所だと感じました。自分も同じように成長したいと思い、X FITNESS GYMを選びました。',
+      },
+      {
+        q: '入会前にどんな悩みがありましたか？',
+        a: '膝の怪我から復帰したばかりで、一人ではトレーニングを続けられるか不安がありました。また、筋力を戻したい気持ちに加えて、減量や食事に関する正しい知識も身につけたいと思っていました。',
+      },
+      {
+        q: 'トレーニングを始めて、体や生活にどんな変化がありましたか？',
+        a: '少しずつ体が以前の状態に戻ってきて、体重も徐々に落ちてきています。食事の考え方や生活習慣も変わり、無理なく続けやすくなりました。',
+      },
+      {
+        q: 'トレーナーの指導はいかがでしたか？',
+        a: '説明がとても分かりやすく、自分に合った形で指導してくれます。また、トレーニング中の追い込みもすごく良く、一人では出せない力を引き出してもらえます。',
+      },
+      {
+        q: 'これから入会を検討している方へ一言お願いします。',
+        a: '生活を変えたい、体を変えたいと思っているなら、ぜひ一歩踏み出してほしいです。X FITNESS GYMには、しっかり寄り添ってくれる良いパーソナルトレーナーがいるので、自信を持って紹介できます。',
+      },
+    ],
   },
 ];
 
@@ -492,32 +524,36 @@ export default function Home() {
             align="center"
           />
 
-          <Reveal delay={80}>
-            <figure className="mt-14 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
-              <blockquote className="bg-brand-night px-7 py-8 md:px-10">
-                <span aria-hidden className="font-display text-5xl leading-none text-brand-red">
-                  “
-                </span>
-                <p className="mt-1 font-serif text-xl font-bold leading-relaxed text-white md:text-2xl">
-                  一言で言うと「最高」です。毎回ジムに行くのが楽しみになります。
-                </p>
-                <figcaption className="mt-4 text-xs uppercase tracking-widest text-white/50">
-                  H.C 様 ／ X FITNESS GYM 会員
-                </figcaption>
-              </blockquote>
-
-              <div className="divide-y divide-neutral-100 px-7 md:px-10">
-                {testimonial.map((t) => (
-                  <div key={t.q} className="py-6">
-                    <p className="text-sm font-bold text-brand-red">Q. {t.q}</p>
-                    <p className="mt-3 text-sm leading-relaxed text-neutral-700 md:text-[15px]">
-                      {t.a}
+          <div className="mt-14 space-y-8">
+            {testimonials.map((person, i) => (
+              <Reveal key={person.name} delay={i * 80}>
+                <figure className="overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
+                  <blockquote className="bg-brand-night px-7 py-8 md:px-10">
+                    <span aria-hidden className="font-display text-5xl leading-none text-brand-red">
+                      “
+                    </span>
+                    <p className="mt-1 font-serif text-xl font-bold leading-relaxed text-white md:text-2xl">
+                      {person.quote}
                     </p>
+                    <figcaption className="mt-4 text-xs uppercase tracking-widest text-white/50">
+                      {person.name} ／ X FITNESS GYM 会員
+                    </figcaption>
+                  </blockquote>
+
+                  <div className="divide-y divide-neutral-100 px-7 md:px-10">
+                    {person.qa.map((t) => (
+                      <div key={t.q} className="py-6">
+                        <p className="text-sm font-bold text-brand-red">Q. {t.q}</p>
+                        <p className="mt-3 text-sm leading-relaxed text-neutral-700 md:text-[15px]">
+                          {t.a}
+                        </p>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </figure>
-          </Reveal>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
