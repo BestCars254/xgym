@@ -2,6 +2,11 @@ import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
+import gymInterior from '../assets/gym-interior.jpg';
+import freeWeights from '../assets/free-weights.jpg';
+import exterior from '../assets/exterior.jpg';
+import machineArea from '../assets/machine-area.jpg';
+import frontDesk from '../assets/front-desk.jpg';
 
 const whyCards = [
   {
@@ -123,10 +128,10 @@ export default function Home() {
           </div>
 
           <Reveal delay={200} className="relative">
-            <ImagePlaceholder
-              label="GYM INTERIOR"
-              className="aspect-[4/5] w-full"
-              rounded="rounded-3xl"
+            <img
+              src={gymInterior}
+              alt="X FITNESS GYM 店内"
+              className="aspect-[4/5] w-full rounded-3xl object-cover"
             />
             <div className="absolute -bottom-4 -left-4 hidden h-24 w-24 rounded-2xl bg-brand-red md:block" />
           </Reveal>
@@ -256,16 +261,32 @@ export default function Home() {
 
           <div className="mt-14 grid auto-rows-[180px] grid-cols-2 gap-4 md:auto-rows-[220px] md:grid-cols-4">
             <Reveal className="col-span-2 row-span-2 md:col-span-2">
-              <ImagePlaceholder label="フリーウェイトエリア" className="h-full w-full" />
+              <img
+                src={freeWeights}
+                alt="フリーウェイトエリア"
+                className="h-full w-full rounded-2xl object-cover"
+              />
             </Reveal>
             <Reveal delay={80}>
-              <ImagePlaceholder label="外観" className="h-full w-full" />
+              <img
+                src={exterior}
+                alt="店舗外観"
+                className="h-full w-full rounded-2xl object-cover"
+              />
             </Reveal>
             <Reveal delay={120} className="md:row-span-2">
-              <ImagePlaceholder label="マシンエリア" className="h-full w-full" />
+              <img
+                src={machineArea}
+                alt="マシンエリア"
+                className="h-full w-full rounded-2xl object-cover"
+              />
             </Reveal>
             <Reveal delay={160}>
-              <ImagePlaceholder label="フロント" className="h-full w-full" />
+              <img
+                src={frontDesk}
+                alt="フロント"
+                className="h-full w-full rounded-2xl object-cover"
+              />
             </Reveal>
             <Reveal delay={200} className="col-span-2 md:col-span-2">
               <ImagePlaceholder label="有酸素エリア" className="h-full w-full" />
