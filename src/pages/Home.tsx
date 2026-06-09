@@ -134,7 +134,6 @@ export default function Home() {
               alt="X FITNESS GYM 店内"
               className="aspect-[4/5] w-full rounded-3xl object-cover"
             />
-            <div className="absolute -bottom-4 -left-4 hidden h-24 w-24 rounded-2xl bg-brand-red md:block" />
           </Reveal>
         </div>
       </section>
