@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
+import { PersonalPlans } from '../components/PersonalPlans';
 
 const whyPersonal = [
   {
@@ -132,7 +133,7 @@ export default function Personal() {
                 {[
                   { big: 'IFBB', label: '国際公認資格' },
                   { big: '1:1', label: '完全個別指導' },
-                  { big: '🥤', label: 'プロテイン付き' },
+                  { big: '🍽️', label: '食事アドバイス込み' },
                 ].map((s) => (
                   <div key={s.label}>
                     <div className="font-display text-3xl tracking-wide text-brand-red md:text-4xl">
@@ -187,52 +188,38 @@ export default function Personal() {
           <SectionHeader
             eyebrow="パーソナル料金"
             title="プロの指導を、手の届く価格で。"
+            subtitle="指導の回数で選べる、月額制のパーソナルプラン。まずは無料体験からどうぞ。"
             align="center"
           />
 
-          <div className="mx-auto mt-16 grid max-w-4xl gap-6 md:grid-cols-2">
-            <Reveal>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-brand-red p-8 text-white shadow-xl">
-                <span className="absolute right-6 top-6 inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white backdrop-blur">
-                  🥤 プロテイン付き
-                </span>
-                <span className="text-xs font-bold uppercase tracking-widest text-white/75">
-                  人気プラン
-                </span>
-                <h3 className="mt-3 font-serif text-2xl font-bold">
-                  パーソナルトレーニング 週1回/月
-                </h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-5xl">¥25,000</span>
-                  <span className="text-sm text-white/80">〜</span>
-                </div>
-                <p className="mt-2 text-xs uppercase tracking-widest text-white/75">
-                  約 ¥6,250 / 回　マンツーマン指導
-                </p>
-                <p className="mt-6 text-sm leading-relaxed text-white/90">
-                  IFBBトレーナーによる完全個別指導。食事アドバイスも含めてサポートします。一人では気づけない体の使い方を、丁寧に教えます。
-                </p>
-              </div>
-            </Reveal>
+          <Reveal>
+            <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-white px-6 py-5 text-left">
+              <p className="text-sm leading-relaxed text-neutral-700">
+                パーソナルプランは、<span className="font-semibold text-brand-ink">トレーナーとのマンツーマン指導が中心</span>です。
+                指導のない日もご自身で通い放題にしたい方は、<span className="font-semibold text-brand-ink">通い放題オプション（月 +¥3,000）</span>を追加できます。
+                <span className="font-semibold text-brand-ink">週2回プラン（月8回）は、通い放題が無料</span>でついてきます。
+                <br className="hidden sm:block" />
+                自主トレだけをご希望の方は、
+                <Link to="/" className="font-semibold text-brand-red underline underline-offset-4">
+                  通常会員プラン
+                </Link>
+                をご覧ください。
+              </p>
+            </div>
+          </Reveal>
 
-            <Reveal delay={120}>
-              <div className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-white p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
-                  お試しプラン
-                </span>
-                <h3 className="mt-3 font-serif text-2xl font-bold text-brand-ink">
-                  単発パーソナルトレーニング
-                </h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-5xl text-brand-ink">¥8,800</span>
-                  <span className="text-sm text-neutral-500">/ 1回のみ</span>
-                </div>
-                <p className="mt-6 text-sm leading-relaxed text-neutral-600">
-                  「まず一度体験したい」という方のためのプランです。継続するかどうかはその後で決めていただけます。
-                </p>
-              </div>
-            </Reveal>
-          </div>
+          <PersonalPlans />
+
+          <Reveal delay={320}>
+            <div className="mt-12 flex justify-center">
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-red px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-brand-redDark"
+              >
+                無料体験を予約する <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
