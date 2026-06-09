@@ -183,7 +183,24 @@ export default function Home() {
             align="center"
           />
 
-          <div className="mt-16 grid gap-6 md:grid-cols-3">
+          <Reveal>
+            <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-brand-soft px-6 py-5 text-center">
+              <p className="text-sm leading-relaxed text-neutral-700">
+                当ジムは、<span className="font-semibold text-brand-ink">ご自身でトレーニングされる通常のジム利用</span>と、
+                <span className="font-semibold text-brand-ink">トレーナーがマンツーマンで指導するパーソナルトレーニング</span>の
+                両方をご用意しています。
+                <br className="hidden sm:block" />
+                下記の料金は<span className="font-semibold text-brand-ink">ご自身でトレーニングされる通常会員向け</span>の料金です。
+                パーソナルトレーニングをご希望の方は別料金となります（
+                <Link to="/personal" className="font-semibold text-brand-red underline underline-offset-4">
+                  パーソナルの詳細はこちら
+                </Link>
+                ）。
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
             <Reveal>
               <div className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-white p-8">
                 <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
