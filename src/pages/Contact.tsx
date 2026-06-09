@@ -10,10 +10,11 @@ const WEB3FORMS_ACCESS_KEY =
 
 const plans = [
   '無料体験を予約したい',
-  '通常会員（¥9,800/月）',
-  '1年契約プラン（¥7,000/月）',
-  '学生・若者応援プラン（¥4,980/月）',
-  'パーソナルトレーニング',
+  'パーソナル 月2回プラン（¥15,000/月）',
+  'パーソナル 月4回プラン（¥28,000/月）',
+  'パーソナル 月8回プラン（¥52,000/月）',
+  '通い放題オプションについて知りたい',
+  '通常会員・自主トレ（¥9,800/月〜）',
   'その他・相談したい',
 ];
 
@@ -29,6 +30,8 @@ type Status = 'idle' | 'sending' | 'success' | 'error';
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>('idle');
+  // 過去日は選べないように、今日以降に制限する。
+  const today = new Date().toLocaleDateString('sv-SE');
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -71,8 +74,8 @@ export default function Contact() {
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-neutral-600">
               内容を受け付けました。担当者より、ご希望の日時に合わせてご連絡いたします。
               お急ぎの場合はお電話（
-              <a href="tel:0534439443" className="font-semibold text-brand-red">
-                053-443-9443
+              <a href="tel:08032833857" className="font-semibold text-brand-red">
+                080-3283-3857
               </a>
               ）でもご予約いただけます。
             </p>
@@ -161,7 +164,7 @@ export default function Contact() {
 
             <div className="grid gap-6 md:grid-cols-2">
               <Field label="ご希望日" required>
-                <input type="date" name="ご希望日" required className={inputClass} />
+                <input type="date" name="ご希望日" required min={today} className={inputClass} />
               </Field>
               <Field label="ご希望の時間帯" required>
                 <select name="ご希望の時間帯" required defaultValue="" className={inputClass}>
@@ -188,7 +191,7 @@ export default function Contact() {
 
             {status === 'error' && (
               <p className="rounded-xl bg-brand-red/10 px-4 py-3 text-sm text-brand-red">
-                送信に失敗しました。お手数ですが、もう一度お試しいただくか、お電話（053-443-9443）でご連絡ください。
+                送信に失敗しました。お手数ですが、もう一度お試しいただくか、お電話（080-3283-3857）でご連絡ください。
               </p>
             )}
 

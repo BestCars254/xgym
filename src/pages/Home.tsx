@@ -4,6 +4,7 @@ import { SectionHeader } from '../components/SectionHeader';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { Testimonials } from '../components/Testimonials';
 import { PersonalPlans } from '../components/PersonalPlans';
+import { Faq } from '../components/Faq';
 import gymInterior from '../assets/gym-interior.jpg';
 import freeWeights from '../assets/free-weights.jpg';
 import exterior from '../assets/exterior.jpg';
@@ -422,10 +423,10 @@ export default function Home() {
                     電話
                   </span>
                   <a
-                    href="tel:0534439443"
+                    href="tel:08032833857"
                     className="mt-2 block font-display text-4xl tracking-wide text-brand-ink hover:text-brand-red md:text-5xl"
                   >
-                    053-443-9443
+                    080-3283-3857
                   </a>
                 </div>
 
@@ -461,19 +462,32 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 md:aspect-auto md:h-full">
-                <iframe
-                  title="X FITNESS GYM 地図"
-                  src="https://www.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E6%B5%9C%E6%9D%BE%E5%B8%82%E5%A4%A9%E7%8E%8B%E7%94%BA1800&output=embed"
-                  className="h-full w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
+              <div className="flex h-full flex-col">
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-100 md:aspect-auto md:flex-1">
+                  <iframe
+                    title="X FITNESS GYM 地図"
+                    src="https://www.google.com/maps?q=%E9%9D%99%E5%B2%A1%E7%9C%8C%E6%B5%9C%E6%9D%BE%E5%B8%82%E5%A4%A9%E7%8E%8B%E7%94%BA1800&output=embed"
+                    className="h-full w-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=%E9%9D%99%E5%B2%A1%E7%9C%8C%E6%B5%9C%E6%9D%BE%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%A4%A9%E7%8E%8B%E7%94%BA1800"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-3 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-red hover:text-brand-red"
+                >
+                  📍 Googleマップで道順を見る <span aria-hidden>→</span>
+                </a>
               </div>
             </Reveal>
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq />
 
       {/* CTA BANNER */}
       <section className="relative overflow-hidden bg-brand-night py-20 text-white md:py-28">
@@ -504,13 +518,13 @@ export default function Home() {
               </Link>
               <div className="flex flex-col items-center gap-1">
                 <a
-                  href="tel:0534439443"
+                  href="tel:08032833857"
                   className="font-display text-5xl tracking-wide text-white hover:text-brand-red md:text-6xl"
                 >
-                  053-443-9443
+                  080-3283-3857
                 </a>
                 <span className="text-xs uppercase tracking-widest text-white/50">
-                  電話受付　月〜土 6:00〜23:00
+                  予約・お問い合わせ受付　月〜土 6:00〜23:00
                 </span>
               </div>
             </div>

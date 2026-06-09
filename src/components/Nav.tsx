@@ -34,11 +34,13 @@ export function Nav() {
       const el = document.getElementById(target);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
-    if (location.pathname !== '/' && location.pathname !== '/personal') {
-      navigate('/');
-      setTimeout(doScroll, 80);
-    } else {
+    // 現在のページに対象セクションがあればそのままスクロール、
+    // なければホームへ遷移してからスクロールする。
+    if (document.getElementById(target)) {
       doScroll();
+    } else {
+      navigate('/');
+      setTimeout(doScroll, 100);
     }
   };
 
