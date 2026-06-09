@@ -184,7 +184,7 @@ export default function Home() {
           />
 
           <Reveal>
-            <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-brand-soft px-6 py-5 text-center">
+            <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-brand-soft px-6 py-5 text-left">
               <p className="text-sm leading-relaxed text-neutral-700">
                 当ジムは、<span className="font-semibold text-brand-ink">ご自身でトレーニングされる通常のジム利用</span>と、
                 <span className="font-semibold text-brand-ink">トレーナーがマンツーマンで指導するパーソナルトレーニング</span>の
