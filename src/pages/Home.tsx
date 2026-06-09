@@ -12,11 +12,19 @@ import frontDesk from '../assets/front-desk.jpg';
 const whyCards = [
   {
     title: 'IFBB 国際公認トレーナーが在籍',
-    body: '世界基準の資格を持つプロが在籍。オーナーのCristianは元ボディビルダーで、IFBB公式代表として浜松で唯一の指導を行います。現在は浜松を健康にするために尽力しています。',
+    body: '世界基準の資格を持つプロがマンツーマンで指導。オーナーのCristianは元ボディビルダーで、IFBB公式代表として浜松で唯一の指導を行います。',
   },
   {
     title: 'あなただけのプログラム',
     body: '「腕が上がるようになりたい」「膝が痛くてしゃがめない」そんな悩みからスタート。一人ひとりの体に合わせたメニューを組みます。',
+  },
+  {
+    title: '怪我を防ぎ、体を守る知識',
+    body: '競技レベルまで体を追い込み、怪我も経験してきたからこそ。無理に鍛えるのではなく、体を守りながら強くする方法でサポートします。',
+  },
+  {
+    title: '30台以上の豊富なマシン',
+    body: '完全個室ジムにはない台数。あなたの経験と骨格に合ったマシンを選べるから、効率よく成長できます。',
   },
   {
     title: '本格的なフリーウェイトエリア',
@@ -24,39 +32,41 @@ const whyCards = [
   },
   {
     title: '温かいコミュニティ',
-    body: '大手ジムにはない、温かいコミュニティの中で続けられます。一人で続けるのが苦手な方も、自然と仲間と励まし合える環境です。',
+    body: '大手ジムにはない、温かいコミュニティの中で続けられます。一人で続けるのが苦手な方も、自然と励まし合える環境です。',
   },
-  {
-    title: '朝6時から夜11時まで営業',
-    body: '月〜土 6:00〜23:00、日曜 8:00〜12:00。早起きの方も、仕事帰りの方も通えます。',
-  },
-  {
-    title: '無料駐車場あり',
-    body: '車でのアクセスも安心。浜松市内の天王町エリアで、駐車スペースを完備しています。',
-  },
+];
+
+const facilityFacts = [
+  { label: '営業時間', value: '月〜土 6:00〜23:00 ／ 日 8:00〜12:00' },
+  { label: '駐車場', value: '無料駐車場あり' },
+  { label: 'アクセス', value: '浜松市中央区天王町1800' },
 ];
 
 const trainers = [
   {
     name: '上地　クリスチャン',
     role: 'IFBB 公認 · オーナー',
+    helps: '初心者・シニアの体づくりから競技者まで対応',
     credentials:
-      '元ボディビルダー / パーソナルフィットネストレーナー / ウェイトトレーニング処方スペシャリスト / トレーナー歴20年以上',
+      '元ボディビルダー。競技で体を追い込み、怪我も経験。だからこそ「体を守りながら強くする」指導が信条 / ウェイトトレーニング処方スペシャリスト / トレーナー歴20年以上',
   },
   {
     name: '上地　ネイア',
     role: 'IFBB 公認',
+    helps: '女性の体づくり・ダイエットのサポートが得意',
     credentials: 'パーソナルフィットネストレーナー / トレーナー歴10年以上',
   },
   {
     name: 'イワザキ　ハファエル',
     role: 'IFBB 公認',
+    helps: '筋力アップ・本格的なボディメイクを目指す方へ',
     credentials:
       'パーソナルフィットネストレーナー / ウェイトトレーニング処方スペシャリスト / マッスルゲート浜松 メンズフィジーク優勝 / トレーナー歴6年以上',
   },
   {
     name: '高橋　勇気',
     role: 'IFBB 公認',
+    helps: '膝・腰の不安、姿勢改善のサポートが得意',
     credentials:
       'パーソナルフィットネストレーナー / 有名パーソナル店で4年勤務 / 大会賞を多数受賞 / トレーナー歴6年以上',
   },
@@ -64,9 +74,44 @@ const trainers = [
 
 const steps = [
   { n: '01', title: '無料体験を予約', body: 'お問い合わせフォームまたはお電話で、お気軽にご連絡ください。' },
-  { n: '02', title: 'カウンセリング', body: '目標・体の状態・生活スタイルをヒアリング。' },
-  { n: '03', title: '体験トレーニング', body: 'プロのトレーナーと一緒に実際に動いてみます。' },
-  { n: '04', title: 'ご入会・スタート', body: 'あなたに合ったプランで、今日から始めましょう。' },
+  { n: '02', title: 'カウンセリング＆体組成測定', body: '目標・体の状態・生活スタイルをヒアリングし、体組成を測定します。' },
+  { n: '03', title: 'お試しトレーニング', body: 'プロのトレーナーとマンツーマンで、実際のセッションを体験。' },
+  { n: '04', title: 'あなた専用プラン開始', body: '測定と体験をもとに、あなただけのプランでスタートします。' },
+];
+
+const personalPlans = [
+  {
+    eyebrow: '月2回・隔週ペース',
+    name: 'ライト',
+    price: '¥15,000',
+    freq: '月2回',
+    desc: 'フォーム確認や健康維持に。まずは習慣化したい方へ。',
+    recommended: false,
+  },
+  {
+    eyebrow: '月4回・週1ペース',
+    name: 'スタンダード',
+    price: '¥28,000',
+    freq: '月4回',
+    desc: '本気で体を変えたい方の定番。いちばん選ばれているプランです。',
+    recommended: true,
+  },
+  {
+    eyebrow: '月8回・週2ペース',
+    name: 'プレミアム',
+    price: '¥52,000',
+    freq: '月8回',
+    desc: '短期間で結果を出したい方へ。集中的にサポートします。',
+    recommended: false,
+  },
+];
+
+const personalIncludes = ['通常ジム利用（自主トレ）使い放題', '初回カウンセリング', '食事アドバイス'];
+
+const memberPlans = [
+  { name: '通常会員', tag: '月ごと契約', price: '¥9,800', desc: '縛りなく自由に通えるスタンダード。' },
+  { name: '1年契約プラン', tag: 'お得な年間契約', price: '¥7,000', desc: '本気で続けたい方に選ばれています。' },
+  { name: '学生・若者応援プラン', tag: '20歳以下限定', price: '¥4,980', desc: '学生・20歳以下の方への特別プラン。' },
 ];
 
 export default function Home() {
@@ -105,7 +150,7 @@ export default function Home() {
                   href="#pricing"
                   className="inline-flex items-center justify-center gap-2 rounded-full border border-brand-ink/20 bg-white px-7 py-3.5 text-sm font-semibold text-brand-ink transition-colors hover:border-brand-ink hover:bg-brand-soft"
                 >
-                  料金プランを見る
+                  パーソナルの料金を見る
                 </a>
               </div>
             </Reveal>
@@ -145,14 +190,14 @@ export default function Home() {
             eyebrow="なぜ X FITNESS GYM？"
             title={
               <>
-                24時間のパーソナルジムには
+                マシンも、知識も、揃っているから
                 <br className="hidden md:block" />
-                できないことがあります。
+                できることがあります。
               </>
             }
             subtitle={
               <>
-                完全個室のジムだと、マシンに制限があり、自分の経験と骨格に合ったトレーニングができなく、挫折する方が多い。しかし、X FITNESS GYMは30台以上のマシンがあるからこそ、きっとあなたに合ったマシンで効率よく成長できます。
+                パーソナルで大切なのは、マシンの数だけではありません。「誰が、どう導いてくれるか」。世界基準の資格を持つトレーナーが、あなたの体と目標に合わせて、マンツーマンで伴走します。
               </>
             }
           />
@@ -170,6 +215,19 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={120}>
+            <div className="mt-6 grid gap-px overflow-hidden rounded-2xl border border-neutral-200 bg-neutral-200 sm:grid-cols-3">
+              {facilityFacts.map((f) => (
+                <div key={f.label} className="bg-white px-6 py-5">
+                  <span className="text-xs font-bold uppercase tracking-widest text-brand-red">
+                    {f.label}
+                  </span>
+                  <p className="mt-1.5 text-sm text-brand-ink">{f.value}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -178,7 +236,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 md:px-10">
           <SectionHeader
             eyebrow="料金プラン"
-            title="シンプルな料金で、本格的なトレーニングを。"
+            title="マンツーマンで、最短で。自主トレ通い放題つき。"
             subtitle="入会金・追加費用は別途ご確認ください。まずは無料体験からどうぞ。"
             align="center"
           />
@@ -186,77 +244,90 @@ export default function Home() {
           <Reveal>
             <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-neutral-200 bg-brand-soft px-6 py-5 text-left">
               <p className="text-sm leading-relaxed text-neutral-700">
-                当ジムは、<span className="font-semibold text-brand-ink">ご自身でトレーニングされる通常のジム利用</span>と、
-                <span className="font-semibold text-brand-ink">トレーナーがマンツーマンで指導するパーソナルトレーニング</span>の
-                両方をご用意しています。
+                当ジムの主役は、<span className="font-semibold text-brand-ink">IFBB公認トレーナーによるマンツーマン指導</span>です。
+                すべてのパーソナル会員は、<span className="font-semibold text-brand-ink">通常のジム利用（自主トレ）も使い放題</span>。
+                指導のない日も、ご自身のペースで通えます。
                 <br className="hidden sm:block" />
-                下記の料金は<span className="font-semibold text-brand-ink">ご自身でトレーニングされる通常会員向け</span>の料金です。
-                パーソナルトレーニングをご希望の方は別料金となります（
-                <Link to="/personal" className="font-semibold text-brand-red underline underline-offset-4">
-                  パーソナルの詳細はこちら
-                </Link>
-                ）。
+                自主トレだけご希望の方は、下部の<span className="font-semibold text-brand-ink">通常会員プラン</span>をご覧ください。
               </p>
             </div>
           </Reveal>
 
+          {/* パーソナル（主役） */}
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <Reveal>
-              <div className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-white p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
-                  スタンダード
-                </span>
-                <h3 className="mt-3 font-serif text-2xl font-bold text-brand-ink">通常会員</h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-5xl text-brand-ink">¥9,800</span>
-                  <span className="text-sm text-neutral-500">/ 月</span>
+            {personalPlans.map((p, i) => (
+              <Reveal key={p.name} delay={i * 80}>
+                <div
+                  className={`relative flex h-full flex-col rounded-3xl p-8 ${
+                    p.recommended
+                      ? 'bg-brand-night text-white shadow-xl ring-2 ring-brand-red'
+                      : 'border border-neutral-200 bg-white'
+                  }`}
+                >
+                  {p.recommended && (
+                    <span className="absolute right-6 top-6 rounded-full bg-brand-red px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white">
+                      おすすめ
+                    </span>
+                  )}
+                  <span
+                    className={`text-xs font-bold uppercase tracking-widest ${
+                      p.recommended ? 'text-white/60' : 'text-neutral-500'
+                    }`}
+                  >
+                    パーソナル・{p.name}
+                  </span>
+                  <span
+                    className={`mt-1 text-sm ${p.recommended ? 'text-white/70' : 'text-neutral-500'}`}
+                  >
+                    {p.eyebrow}
+                  </span>
+                  <div className="mt-5 flex items-baseline gap-2">
+                    <span
+                      className={`font-display text-5xl ${p.recommended ? 'text-white' : 'text-brand-ink'}`}
+                    >
+                      {p.price}
+                    </span>
+                    <span className={`text-sm ${p.recommended ? 'text-white/70' : 'text-neutral-500'}`}>
+                      / 月（{p.freq}）
+                    </span>
+                  </div>
+                  <p
+                    className={`mt-4 text-sm leading-relaxed ${
+                      p.recommended ? 'text-white/75' : 'text-neutral-600'
+                    }`}
+                  >
+                    {p.desc}
+                  </p>
+                  <ul
+                    className={`mt-5 space-y-2 border-t pt-5 ${
+                      p.recommended ? 'border-white/15' : 'border-neutral-100'
+                    }`}
+                  >
+                    {personalIncludes.map((item) => (
+                      <li
+                        key={item}
+                        className={`flex items-start gap-2 text-sm ${
+                          p.recommended ? 'text-white/85' : 'text-neutral-700'
+                        }`}
+                      >
+                        <span className="mt-0.5 font-bold text-brand-red">✓</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="mt-5 text-sm leading-relaxed text-neutral-600">
-                  月ごとの契約。縛りなく自由に通えるスタンダードプランです。
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={80}>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-3xl bg-brand-night p-8 text-white shadow-xl">
-                <span className="absolute right-6 top-6 rounded-full bg-brand-red px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-white">
-                  おすすめ
-                </span>
-                <span className="text-xs font-bold uppercase tracking-widest text-white/60">
-                  ベスト バリュー
-                </span>
-                <h3 className="mt-3 font-serif text-2xl font-bold">1年契約プラン</h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-5xl text-white">¥7,000</span>
-                  <span className="text-sm text-white/70">/ 月</span>
-                </div>
-                <p className="mt-5 text-sm leading-relaxed text-white/75">
-                  年間契約でお得に。本気で続けたい方に選ばれているプランです。
-                </p>
-              </div>
-            </Reveal>
-
-            <Reveal delay={160}>
-              <div className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-white p-8">
-                <span className="text-xs font-bold uppercase tracking-widest text-neutral-500">
-                  20歳以下限定
-                </span>
-                <h3 className="mt-3 font-serif text-2xl font-bold text-brand-ink">
-                  学生・若者応援プラン
-                </h3>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className="font-display text-5xl text-brand-ink">¥4,980</span>
-                  <span className="text-sm text-neutral-500">/ 月</span>
-                </div>
-                <p className="mt-5 text-sm leading-relaxed text-neutral-600">
-                  若いうちから正しい体の使い方を。学生・20歳以下の方への特別プランです。
-                </p>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
 
           <Reveal delay={240}>
-            <div className="mt-14 flex justify-center">
+            <p className="mt-6 text-center text-sm text-neutral-500">
+              すべてのパーソナルプランに「通常ジム利用 使い放題」「初回カウンセリング」「食事アドバイス」を含みます。
+            </p>
+          </Reveal>
+
+          <Reveal delay={280}>
+            <div className="mt-10 flex justify-center">
               <Link
                 to="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-brand-red px-8 py-4 text-sm font-semibold text-white transition-colors hover:bg-brand-redDark"
@@ -265,6 +336,38 @@ export default function Home() {
               </Link>
             </div>
           </Reveal>
+
+          {/* 通常会員（脇役） */}
+          <div className="mt-20 border-t border-neutral-200 pt-14">
+            <Reveal>
+              <div className="text-center">
+                <h3 className="font-serif text-xl font-bold text-brand-ink md:text-2xl">
+                  まずは自分のペースで通いたい方へ
+                </h3>
+                <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-neutral-500">
+                  通常会員（自主トレのみ）。トレーナーの指導はつきませんが、充実した設備を自由にご利用いただけます。
+                </p>
+              </div>
+            </Reveal>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-3">
+              {memberPlans.map((m, i) => (
+                <Reveal key={m.name} delay={i * 70}>
+                  <div className="flex h-full flex-col rounded-2xl border border-neutral-200 bg-white p-6">
+                    <span className="text-[11px] font-bold uppercase tracking-widest text-neutral-400">
+                      {m.tag}
+                    </span>
+                    <h4 className="mt-2 font-serif text-lg font-bold text-brand-ink">{m.name}</h4>
+                    <div className="mt-3 flex items-baseline gap-1.5">
+                      <span className="font-display text-3xl text-brand-ink">{m.price}</span>
+                      <span className="text-xs text-neutral-500">/ 月</span>
+                    </div>
+                    <p className="mt-3 text-xs leading-relaxed text-neutral-600">{m.desc}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -318,7 +421,11 @@ export default function Home() {
           <SectionHeader
             eyebrow="トレーナー紹介"
             title="全員がIFBB公認。プロが、あなたに寄り添います。"
-            subtitle="世界基準の資格を持つトレーナーが在籍。それぞれの専門性を活かして、あなたの目標をサポートします。"
+            subtitle={
+              <>
+                私たちはボディビルで競技レベルまで体を追い込み、その過程で怪我も経験してきました。だからこそ、無理に鍛えるのではなく、体を守りながら強くする方法を熟知しています。世界基準の資格を持つトレーナーが、それぞれの専門性で、あなたの目標をサポートします。
+              </>
+            }
           />
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -335,6 +442,9 @@ export default function Home() {
                       {t.role}
                     </span>
                     <h3 className="mt-2 font-serif text-xl font-bold text-brand-ink">{t.name}</h3>
+                    <p className="mt-3 rounded-lg bg-brand-soft px-3 py-2 text-xs font-semibold leading-relaxed text-brand-ink">
+                      {t.helps}
+                    </p>
                     <p className="mt-3 text-xs leading-relaxed text-neutral-600">
                       {t.credentials}
                     </p>
@@ -350,8 +460,9 @@ export default function Home() {
       <section className="bg-brand-soft py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-10">
           <SectionHeader
-            eyebrow="ご入会の流れ"
-            title="4ステップで始められます"
+            eyebrow="体験から入会までの流れ"
+            title="はじめての方も、4ステップで。"
+            subtitle="パーソナルが初めての方もご安心ください。何をするのか、順番にご案内します。"
           />
 
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
