@@ -151,7 +151,6 @@ export default function Personal() {
               className="aspect-[4/5] w-full"
               rounded="rounded-3xl"
             />
-            <div className="absolute -bottom-4 -right-4 hidden h-24 w-24 rounded-2xl bg-brand-red md:block" />
           </Reveal>
         </div>
       </section>
