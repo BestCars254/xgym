@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 
+// Web3Forms のアクセスキー（公開しても安全。送信先 iwazaki.xgym@gmail.com に紐づく）。
+// 環境変数が設定されていればそちらを優先する。
 const WEB3FORMS_ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? 'YOUR_WEB3FORMS_ACCESS_KEY';
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? 'e2a99f1f-075e-4a7b-ad8c-9c1752a94ad0';
 
 const plans = [
   '無料体験を予約したい',
