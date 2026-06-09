@@ -64,7 +64,7 @@ export function Testimonials() {
   const person = testimonials[index];
 
   return (
-    <section className="bg-brand-soft py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <div className="mx-auto max-w-4xl px-5 md:px-10">
         <SectionHeader
           eyebrow="お客様の声"

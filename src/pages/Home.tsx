@@ -371,6 +371,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <Testimonials />
+
       {/* ACCESS */}
       <section id="access" className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-10">
@@ -459,9 +462,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* TESTIMONIALS */}
-      <Testimonials />
 
       {/* CTA BANNER */}
       <section className="relative overflow-hidden bg-brand-night py-20 text-white md:py-28">
