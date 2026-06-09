@@ -19,7 +19,13 @@ const whyPersonal = [
   },
 ];
 
-const trainerProfiles = [
+const trainerProfiles: {
+  name: string;
+  role: string;
+  credentials: string;
+  quote: string;
+  recommendedFor?: string;
+}[] = [
   {
     name: '上地　クリスチャン',
     role: 'IFBB 公認 · オーナー',
@@ -46,6 +52,14 @@ const trainerProfiles = [
     credentials:
       'パーソナルフィットネストレーナー / 有名パーソナル店で4年勤務 / 大会賞を多数受賞 / トレーナー歴6年以上',
     quote: '一緒に目標を決めて、一緒に達成しましょう。あなたを導きます。',
+  },
+  {
+    name: 'イワザキ　レオナルド',
+    role: 'IFBB 公認',
+    credentials: 'パーソナルトレーナー / 大会入賞 / トレーニング歴9年',
+    quote:
+      '9年間、自分自身もトレーニングを続けてきたからこそ、初心者がつまずきやすいポイントを誰よりも理解しています。話をじっくり聞くことを大切にし、あなた自身もまだ気づいていない本当の悩みや目標まで引き出します。趣味は登山。一歩ずつ頂上を目指すように、あなたの体づくりにも長く寄り添います。',
+    recommendedFor: '何から始めればいいか分からない方、まずはじっくり話を聞いてほしい方。',
   },
 ];
 
@@ -253,6 +267,12 @@ export default function Personal() {
                     <blockquote className="mt-5 border-l-2 border-brand-red pl-4 text-sm italic leading-relaxed text-brand-ink">
                       「{t.quote}」
                     </blockquote>
+                    {t.recommendedFor && (
+                      <p className="mt-4 rounded-lg bg-brand-soft px-3 py-2 text-xs leading-relaxed text-brand-ink">
+                        <span className="font-bold text-brand-red">こんな方におすすめ：</span>
+                        {t.recommendedFor}
+                      </p>
+                    )}
                   </div>
                 </article>
               </Reveal>
