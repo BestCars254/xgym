@@ -68,6 +68,29 @@ const steps = [
   { n: '04', title: 'ご入会・スタート', body: 'あなたに合ったプランで、今日から始めましょう。' },
 ];
 
+const testimonial = [
+  {
+    q: 'なぜ X FITNESS GYM を選びましたか？',
+    a: '設備が充実していることはもちろんですが、トレーナーの皆さんがとても親切でプロフェッショナルなところに惹かれました。自分の目標に合わせて、解剖学的な視点も含めて的確なアドバイスをくれるので、「ここなら信頼して体を任せられる！」と思い選びました。',
+  },
+  {
+    q: '入会前はどんな悩みがありましたか？',
+    a: '最初は「自分でも本当にやっていけるのかな…」という不安が一番大きかったです。また、日々の活動量に対する消費カロリーのバランスや、トレーニングの正しいフォームが分からず、自己流では限界を感じていました。体脂肪をコントロールしながら、しっかり筋肉をつけてメリハリのある体を作りたいけれど、1人で迷わずに続けていける自信がありませんでした。',
+  },
+  {
+    q: 'トレーニングを始めて、体や生活にどんな変化がありましたか？',
+    a: 'ベンチプレスやレッグカールなど、正しいフォームを教わったことで、狙った筋肉にしっかり効かせられるようになり、体の引き締まりを実感しています！また、日々の消費カロリーを意識するようになり、毎日の食事や休息のバランスなど、健康に対するライフスタイル全体の意識が大きく変わりました。',
+  },
+  {
+    q: 'トレーナーの指導はいかがでしたか？',
+    a: '一言で言うと「最高」です！ ただキツい運動をさせるのではなく、「なぜこのトレーニングが必要なのか」「どこの筋肉を動かしているのか」を論理的に、かつポジティブに教えてくれます。モチベーションの上げ方も上手なので、毎回ジムに行くのが楽しみになります。',
+  },
+  {
+    q: 'これから入会を検討している方へメッセージをお願いします！',
+    a: '「自分にできるかな…」と迷っているなら、絶対に一歩を踏み出してみることをおすすめします！ X FITNESS GYMのトレーナーは、一人ひとりの目標やライフスタイルに真剣に寄り添ってくれます。体が変わると、毎日の生活や自分への自信も驚くほど変わりますよ！',
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -456,6 +479,45 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="bg-brand-soft py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-5 md:px-10">
+          <SectionHeader
+            eyebrow="お客様の声"
+            title="「ここなら信頼して体を任せられる」"
+            subtitle="実際に通われている会員さまに、入会のきっかけや体の変化についてお聞きしました。"
+            align="center"
+          />
+
+          <Reveal delay={80}>
+            <figure className="mt-14 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-sm">
+              <blockquote className="bg-brand-night px-7 py-8 md:px-10">
+                <span aria-hidden className="font-display text-5xl leading-none text-brand-red">
+                  “
+                </span>
+                <p className="mt-1 font-serif text-xl font-bold leading-relaxed text-white md:text-2xl">
+                  一言で言うと「最高」です。毎回ジムに行くのが楽しみになります。
+                </p>
+                <figcaption className="mt-4 text-xs uppercase tracking-widest text-white/50">
+                  X FITNESS GYM 会員さま
+                </figcaption>
+              </blockquote>
+
+              <div className="divide-y divide-neutral-100 px-7 md:px-10">
+                {testimonial.map((t) => (
+                  <div key={t.q} className="py-6">
+                    <p className="text-sm font-bold text-brand-red">Q. {t.q}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-neutral-700 md:text-[15px]">
+                      {t.a}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </figure>
+          </Reveal>
         </div>
       </section>
 
