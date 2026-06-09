@@ -15,11 +15,16 @@ export function Footer() {
               静岡県浜松市中央区天王町1800
             </p>
             <a
-              href="tel:0534439443"
+              href="tel:08032833857"
               className="mt-2 inline-block text-sm font-semibold text-brand-ink hover:text-brand-red"
             >
-              TEL 053-443-9443
+              TEL 080-3283-3857
             </a>
+            <p className="mt-3 text-xs leading-relaxed text-neutral-500">
+              営業：月〜土 6:00〜23:00 ／ 日 8:00〜12:00
+              <br />
+              パーソナル・新規の自主トレ会員は予約制です。
+            </p>
           </div>
 
           <div>
@@ -56,8 +61,8 @@ export function Footer() {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-neutral-600">
               <li>
-                <a href="tel:08032833857" className="hover:text-brand-red">
-                  080-3283-3857
+                <a href="mailto:iwazaki.xgym@gmail.com" className="break-all hover:text-brand-red">
+                  iwazaki.xgym@gmail.com
                 </a>
               </li>
               <li>
@@ -66,18 +71,13 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:iwazaki.xgym@gmail.com" className="break-all hover:text-brand-red">
-                  iwazaki.xgym@gmail.com
-                </a>
-              </li>
-              <li>
                 <a
-                  href="https://www.facebook.com/"
+                  href="https://www.instagram.com/xgymjapan/"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-brand-red"
                 >
-                  Facebook
+                  Instagram（@xgymjapan）
                 </a>
               </li>
               <li>

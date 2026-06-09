@@ -3,6 +3,7 @@ import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { PersonalPlans } from '../components/PersonalPlans';
+import { Faq } from '../components/Faq';
 
 const whyPersonal = [
   {
@@ -330,6 +331,9 @@ export default function Personal() {
           </div>
         </div>
       </section>
+
+      {/* FAQ */}
+      <Faq />
 
       {/* CTA BANNER */}
       <section className="relative overflow-hidden bg-brand-night py-20 text-white md:py-28">
