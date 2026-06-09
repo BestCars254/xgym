@@ -502,7 +502,7 @@ export default function Home() {
                   一言で言うと「最高」です。毎回ジムに行くのが楽しみになります。
                 </p>
                 <figcaption className="mt-4 text-xs uppercase tracking-widest text-white/50">
-                  X FITNESS GYM 会員さま
+                  H.C 様 ／ X FITNESS GYM 会員
                 </figcaption>
               </blockquote>
 
