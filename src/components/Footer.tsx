@@ -61,6 +61,16 @@ export function Footer() {
             </h4>
             <ul className="mt-5 space-y-3 text-sm text-neutral-600">
               <li>
+                <a
+                  href="https://lin.ee/Wvrb19o"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#06C755] px-4 py-2 text-xs font-semibold text-white hover:brightness-110"
+                >
+                  LINEで相談する →
+                </a>
+              </li>
+              <li>
                 <a href="mailto:iwazaki.xgym@gmail.com" className="break-all hover:text-brand-red">
                   iwazaki.xgym@gmail.com
                 </a>

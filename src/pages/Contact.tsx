@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
+import { LINE_URL } from '../components/FloatingCTA';
 
 // Web3Forms のアクセスキー（公開しても安全。送信先 iwazaki.xgym@gmail.com に紐づく）。
 // 環境変数が設定されていればそちらを優先する。
@@ -101,10 +102,35 @@ export default function Contact() {
           align="center"
         />
 
+        <Reveal delay={40}>
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-10 flex items-center justify-between gap-4 rounded-2xl bg-[#06C755] px-6 py-5 text-white shadow-sm transition-all hover:brightness-110"
+          >
+            <span className="flex flex-col">
+              <span className="text-base font-bold">LINEで気軽に相談・予約する</span>
+              <span className="mt-0.5 text-xs text-white/85">
+                フォーム入力が面倒な方はこちら。友だち追加してメッセージを送るだけ。
+              </span>
+            </span>
+            <span aria-hidden className="font-display text-2xl">
+              →
+            </span>
+          </a>
+        </Reveal>
+
+        <div className="mt-8 flex items-center gap-4 text-xs text-neutral-400">
+          <span className="h-px flex-1 bg-neutral-200" />
+          またはフォームから
+          <span className="h-px flex-1 bg-neutral-200" />
+        </div>
+
         <Reveal delay={80}>
           <form
             onSubmit={handleSubmit}
-            className="mt-14 grid gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm md:p-10"
+            className="mt-8 grid gap-6 rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm md:p-10"
           >
             {/* Honeypot anti-spam field */}
             <input
