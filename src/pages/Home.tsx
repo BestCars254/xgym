@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { Testimonials } from '../components/Testimonials';
 import { PersonalPlans } from '../components/PersonalPlans';
 import { Faq } from '../components/Faq';
@@ -10,6 +9,11 @@ import freeWeights from '../assets/free-weights.jpg';
 import exterior from '../assets/exterior.jpg';
 import machineArea from '../assets/machine-area.jpg';
 import frontDesk from '../assets/front-desk.jpg';
+import cardioArea from '../assets/cardio-area.jpg';
+import trainerCristian from '../assets/trainer-cristian.jpg';
+import trainerNeia from '../assets/trainer-neia.jpg';
+import trainerRafael from '../assets/trainer-rafael.jpg';
+import trainerYuki from '../assets/trainer-yuki.jpg';
 
 const whyCards = [
   {
@@ -48,6 +52,7 @@ const trainers = [
   {
     name: '上地　クリスチャン',
     role: 'IFBB 公認 · オーナー',
+    photo: trainerCristian,
     helps: '初心者・シニアの体づくりから競技者まで対応',
     credentials:
       '元ボディビルダー。競技で体を追い込み、怪我も経験。だからこそ「体を守りながら強くする」指導が信条 / ウェイトトレーニング処方スペシャリスト / トレーナー歴20年以上',
@@ -55,12 +60,14 @@ const trainers = [
   {
     name: '上地　ネイア',
     role: 'IFBB 公認',
+    photo: trainerNeia,
     helps: '女性の体づくり・ダイエットのサポートが得意',
     credentials: 'パーソナルフィットネストレーナー / トレーナー歴10年以上',
   },
   {
     name: 'イワザキ　ハファエル',
     role: 'IFBB 公認',
+    photo: trainerRafael,
     helps: '筋力アップ・本格的なボディメイクを目指す方へ',
     credentials:
       'パーソナルフィットネストレーナー / ウェイトトレーニング処方スペシャリスト / マッスルゲート浜松 メンズフィジーク優勝 / トレーナー歴6年以上',
@@ -68,6 +75,7 @@ const trainers = [
   {
     name: '高橋　勇気',
     role: 'IFBB 公認',
+    photo: trainerYuki,
     helps: '膝・腰の不安、姿勢改善のサポートが得意',
     credentials:
       'パーソナルフィットネストレーナー / 有名パーソナル店で4年勤務 / 大会賞を多数受賞 / トレーナー歴6年以上',
@@ -312,7 +320,12 @@ export default function Home() {
               />
             </Reveal>
             <Reveal delay={200} className="col-span-2 md:col-span-2">
-              <ImagePlaceholder label="有酸素エリア" className="h-full w-full" />
+              <img
+                src={cardioArea}
+                alt="有酸素エリア"
+                className="h-full w-full rounded-2xl object-cover"
+                loading="lazy"
+              />
             </Reveal>
           </div>
         </div>
@@ -335,10 +348,11 @@ export default function Home() {
             {trainers.map((t, i) => (
               <Reveal key={t.name} delay={i * 70}>
                 <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all hover:-translate-y-1 hover:shadow-lg">
-                  <ImagePlaceholder
-                    label={t.name}
-                    className="aspect-[4/5] w-full"
-                    rounded="rounded-none"
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    className="aspect-[4/5] w-full object-cover object-top"
+                    loading="lazy"
                   />
                   <div className="flex flex-1 flex-col p-6">
                     <span className="text-xs font-bold uppercase tracking-widest text-brand-red">

@@ -4,6 +4,11 @@ import { SectionHeader } from '../components/SectionHeader';
 import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { PersonalPlans } from '../components/PersonalPlans';
 import { Faq } from '../components/Faq';
+import trainerCristian from '../assets/trainer-cristian.jpg';
+import trainerNeia from '../assets/trainer-neia.jpg';
+import trainerRafael from '../assets/trainer-rafael.jpg';
+import trainerYuki from '../assets/trainer-yuki.jpg';
+import trainerLeonardo from '../assets/trainer-leonardo.jpg';
 
 const whyPersonal = [
   {
@@ -23,6 +28,7 @@ const whyPersonal = [
 const trainerProfiles: {
   name: string;
   role: string;
+  photo: string;
   credentials: string;
   quote: string;
   recommendedFor?: string;
@@ -30,6 +36,7 @@ const trainerProfiles: {
   {
     name: '上地　クリスチャン',
     role: 'IFBB 公認 · オーナー',
+    photo: trainerCristian,
     credentials:
       '元ボディビルダー / パーソナルフィットネストレーナー / ウェイトトレーニング処方スペシャリスト / トレーナー歴20年以上',
     quote: '結果を出すには、正しい知識と継続が必要です。私が全力でサポートします。',
@@ -37,12 +44,14 @@ const trainerProfiles: {
   {
     name: '上地　ネイア',
     role: 'IFBB 公認',
+    photo: trainerNeia,
     credentials: 'パーソナルフィットネストレーナー / トレーナー歴10年以上',
     quote: '女性の体のことを理解した指導で、無理なく理想の体へ。',
   },
   {
     name: 'イワザキ　ハファエル',
     role: 'IFBB 公認',
+    photo: trainerRafael,
     credentials:
       'パーソナルフィットネストレーナー / ウェイトトレーニング処方スペシャリスト / マッスルゲート浜松 メンズフィジーク優勝 / トレーナー歴6年以上',
     quote: '競技で培った経験を、あなたの日常トレーニングに活かします。',
@@ -50,6 +59,7 @@ const trainerProfiles: {
   {
     name: '高橋　勇気',
     role: 'IFBB 公認',
+    photo: trainerYuki,
     credentials:
       'パーソナルフィットネストレーナー / 有名パーソナル店で4年勤務 / 大会賞を多数受賞 / トレーナー歴6年以上',
     quote: '一緒に目標を決めて、一緒に達成しましょう。あなたを導きます。',
@@ -57,6 +67,7 @@ const trainerProfiles: {
   {
     name: 'イワザキ　レオナルド',
     role: 'IFBB 公認',
+    photo: trainerLeonardo,
     credentials: 'パーソナルトレーナー / 大会入賞 / トレーニング歴9年',
     quote:
       '9年間、自分自身もトレーニングを続けてきたからこそ、初心者がつまずきやすいポイントを誰よりも理解しています。話をじっくり聞くことを大切にし、あなた自身もまだ気づいていない本当の悩みや目標まで引き出します。趣味は登山。一歩ずつ頂上を目指すように、あなたの体づくりにも長く寄り添います。',
@@ -250,10 +261,11 @@ export default function Personal() {
             {trainerProfiles.map((t, i) => (
               <Reveal key={t.name} delay={i * 80}>
                 <article className="grid h-full grid-cols-[140px_1fr] gap-5 rounded-3xl border border-neutral-200 bg-white p-6 transition-all hover:shadow-xl md:grid-cols-[180px_1fr] md:gap-7 md:p-8">
-                  <ImagePlaceholder
-                    label={t.name}
-                    className="aspect-[3/4] h-full w-full"
-                    rounded="rounded-2xl"
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    className="aspect-[3/4] h-full w-full rounded-2xl object-cover object-top"
+                    loading="lazy"
                   />
                   <div className="flex flex-col">
                     <span className="text-xs font-bold uppercase tracking-widest text-brand-red">
