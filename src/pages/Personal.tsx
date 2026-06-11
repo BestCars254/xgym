@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 import { SectionHeader } from '../components/SectionHeader';
-import { ImagePlaceholder } from '../components/ImagePlaceholder';
 import { PersonalPlans } from '../components/PersonalPlans';
 import { Faq } from '../components/Faq';
 import trainerCristian from '../assets/trainer-cristian.jpg';
@@ -9,6 +8,7 @@ import trainerNeia from '../assets/trainer-neia.jpg';
 import trainerRafael from '../assets/trainer-rafael.jpg';
 import trainerYuki from '../assets/trainer-yuki.jpg';
 import trainerLeonardo from '../assets/trainer-leonardo.jpg';
+import personalTraining from '../assets/personal-training.jpg';
 
 const whyPersonal = [
   {
@@ -173,10 +173,10 @@ export default function Personal() {
           </div>
 
           <Reveal delay={200} className="relative">
-            <ImagePlaceholder
-              label="PERSONAL TRAINING"
-              className="aspect-[4/5] w-full"
-              rounded="rounded-3xl"
+            <img
+              src={personalTraining}
+              alt="パーソナルトレーニングの様子"
+              className="aspect-[4/5] w-full rounded-3xl object-cover"
             />
           </Reveal>
         </div>
