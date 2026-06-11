@@ -14,6 +14,7 @@ import trainerCristian from '../assets/trainer-cristian.jpg';
 import trainerNeia from '../assets/trainer-neia.jpg';
 import trainerRafael from '../assets/trainer-rafael.jpg';
 import trainerYuki from '../assets/trainer-yuki.jpg';
+import trainerLeonardo from '../assets/trainer-leonardo.jpg';
 
 const whyCards = [
   {
@@ -53,16 +54,17 @@ const trainers = [
     name: '上地　クリスチャン',
     role: 'IFBB 公認 · オーナー',
     photo: trainerCristian,
-    helps: '初心者・シニアの体づくりから競技者まで対応',
+    helps: '初心者・シニアから競技者まで幅広く対応',
     credentials:
-      '元ボディビルダー。競技で体を追い込み、怪我も経験。だからこそ「体を守りながら強くする」指導が信条 / ウェイトトレーニング処方スペシャリスト / トレーナー歴20年以上',
+      '元ボディビルダー / IFBB公式代表 / ウェイトトレーニング処方スペシャリスト / トレーナー歴20年以上',
   },
   {
     name: '上地　ネイア',
     role: 'IFBB 公認',
     photo: trainerNeia,
     helps: '女性の体づくり・ダイエットのサポートが得意',
-    credentials: 'パーソナルフィットネストレーナー / トレーナー歴10年以上',
+    credentials:
+      'パーソナルフィットネストレーナー / 女性のボディメイク指導 / トレーナー歴10年以上',
   },
   {
     name: 'イワザキ　ハファエル',
@@ -70,7 +72,7 @@ const trainers = [
     photo: trainerRafael,
     helps: '筋力アップ・本格的なボディメイクを目指す方へ',
     credentials:
-      'パーソナルフィットネストレーナー / ウェイトトレーニング処方スペシャリスト / マッスルゲート浜松 メンズフィジーク優勝 / トレーナー歴6年以上',
+      'メンズフィジーク優勝 / ウェイトトレーニング処方スペシャリスト / トレーナー歴6年以上',
   },
   {
     name: '高橋　勇気',
@@ -78,7 +80,15 @@ const trainers = [
     photo: trainerYuki,
     helps: '膝・腰の不安、姿勢改善のサポートが得意',
     credentials:
-      'パーソナルフィットネストレーナー / 有名パーソナル店で4年勤務 / 大会賞を多数受賞 / トレーナー歴6年以上',
+      '有名パーソナル店で4年勤務 / 大会受賞多数 / パーソナルトレーナー / トレーナー歴6年以上',
+  },
+  {
+    name: 'イワザキ　レオナルド',
+    role: 'IFBB 公認',
+    photo: trainerLeonardo,
+    helps: '何から始めればいいか分からない初心者の方へ',
+    credentials:
+      'パーソナルトレーナー / 大会入賞 / 初心者指導が得意 / トレーニング歴9年',
   },
 ];
 
@@ -344,7 +354,7 @@ export default function Home() {
             }
           />
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {trainers.map((t, i) => (
               <Reveal key={t.name} delay={i * 70}>
                 <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all hover:-translate-y-1 hover:shadow-lg">
